@@ -60,18 +60,44 @@
        }
     });
 
-     $('#physical_activity').click(function(){
-        var physical_activity = $('#physical_activity').val()
-        console.log(physical_activity)
-        if(physical_activity=='No'){
-            $('#activity').hide()
+    // $('#physical_activity').click(function(){
+    //     var physical_activity = $('#physical_activity').val()
+    //     console.log(physical_activity)
+    //     if(physical_activity=='No'){
+    //         $('#activity').hide()
+    //     }
+    //     else{
+    //         $('#activity').show()
+    //     }
+    //  });
+
+     $('#radiating_symptoms').click(function(){
+        var radiating_symptoms = $('#radiating_symptoms').val()
+        console.log(radiating_symptoms_yes)
+        if(radiating_symptoms=='No'){
+            $('#radiating_symptoms_yes').hide()
         }
         else{
-            $('#activity').show()
+            $('#radiating_symptoms_yes').show()
+        }
+     });
+
+     $('#stenosis').click(function(){
+        var stenosis = $('#stenosis').val()
+        console.log(stenosis)
+        if(stenosis=='No'){
+            $('#stenosis_yes').hide()
+        }
+        else if(stenosis=='Do Not Know'){
+            $('#stenosis_yes').hide()
+        }
+        else{
+            $('#stenosis_yes').show()
         }
      });
 
     $('#chair_creation').click(function(){
+        var patient_id=$("#patient_id").val()
         var back_height=$("#back_height").val()
         var back_width=$("#back_width").val()
         var hip_length=$("#hip_length").val()
@@ -81,14 +107,19 @@
         var additional_info1=$("#additional_info1").val()
 
         var general=$("#general").val()
-        var physical_activity=$("#physical_activity").val()
-        if(physical_activity=='Yes'){
-            var which_activity=$("#which_activity").val()
-        }
+        // var physical_activity=$("#physical_activity").val()
+        // if(physical_activity=='Yes'){
+        //     var which_activity=$("#which_activity").val()
+        // }
 
         var disc_herniation=$("#disc_herniation").val()
-        var radiating_symptoms=$("#radiating_symptoms").val()
+        var radiating_symptoms = $("#radiating_symptoms").val()
+        var choose_location=$("#choose_location").val()
         var stenosis=$("#stenosis").val()
+        if(stenosis=='Yes'){
+            var height_level=$("#height_level").val()
+            var hardware_severiity=$("#hardware_severiity").val()
+        }
         var hyperlordosis=$("#hyperlordosis").val()
         var kyphosis=$("#kyphosis").val()
         var scoliosis=$("#scoliosis").val()
@@ -105,6 +136,7 @@
         if(chair_length!='' && chair_width!='' && seat_length!='' && seat_width!=''){
             $('#information1').hide()
             $('#information2').show()
+            document.getElementById('patient_id1').innerHTML=patient_id;
             document.getElementById('back_height1').innerHTML=back_height;
             document.getElementById('back_width1').innerHTML=back_width;
             document.getElementById('hip_length1').innerHTML=hip_length;
@@ -116,13 +148,19 @@
 
             document.getElementById('general1').innerHTML=general;
             document.getElementById('general2').innerHTML=general;
-            document.getElementById('physical_activity1').innerHTML=physical_activity;
-            document.getElementById('physical_activity2').innerHTML=physical_activity;
-            document.getElementById('which_activity1').innerHTML=which_activity;
+            // document.getElementById('physical_activity1').innerHTML=physical_activity;
+            // document.getElementById('physical_activity2').innerHTML=physical_activity;
+            // document.getElementById('which_activity1').innerHTML=which_activity;
 
             document.getElementById('disc_herniation1').innerHTML=disc_herniation;
             document.getElementById('radiating_symptoms1').innerHTML=radiating_symptoms;
             document.getElementById('stenosis1').innerHTML=stenosis;
+            document.getElementById('choose_location1').innerHTML=choose_location;
+            if(stenosis=='Yes'){
+                $('#stenosis').show()
+                document.getElementById('height_level1').innerHTML=height_level;
+                document.getElementById('hardware_severiity1').innerHTML=hardware_severiity;
+            }
             document.getElementById('hyperlordosis1').innerHTML=hyperlordosis;
             document.getElementById('kyphosis1').innerHTML=kyphosis;
             document.getElementById('scoliosis1').innerHTML=scoliosis;

@@ -68,12 +68,16 @@
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <div class="form-group">
-                            <label for="back_height">Back Height:</label>
-                            <input type="text" class="form-control" id="back_height">
+                            <label for="patient_id">Patient ID:</label>
+                            <input type="text" class="form-control" id="patient_id">
                         </div>
                         <div class="form-group">
-                            <label for="back_width">Back Width:</label>
-                            <input type="text" class="form-control" id="back_width">
+                            <label for="back_height">TORSO Height(cm):</label>
+                            <input type="number" class="form-control" id="back_height">
+                        </div>
+                        <div class="form-group">
+                            <label for="back_width">TORSO Width(cm):</label>
+                            <input type="number" class="form-control" id="back_width">
                         </div>
                         <div class="form-group">
                             <label for="hip_length">Hip Length:</label>
@@ -82,6 +86,10 @@
                         <div class="form-group">
                             <label for="customer_number">Customer Number:</label>
                             <input type="number" class="form-control " id="customer_number">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer_image">Customer Image:</label>
+                            <input type="file" name="customer_image"id="customer_image" accept="image/*">
                         </div>
                          <div class="form-group">
                             <label for="sitting_hours">No of Sitting Hours Per Day:</label>
@@ -121,7 +129,7 @@
                                 <option>Alergy</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label for="physical_activity">Regular Physical Activity:</label>
                             <select class="form-control" id="physical_activity">
                                 <option>Yes</option>
@@ -131,7 +139,7 @@
                         <div class="form-group" id="activity">
                             <label for="which_activity">Which Activity:</label>
                             <input type="text" class="form-control" id="which_activity">
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -149,27 +157,70 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <label for="disc_herniation">Disc Herniation:</label>
-                            <input type="text" class="form-control" id="disc_herniation">
+                            <select class="form-control" id="disc_herniation">
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>Do Not Know</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="radiating_symptoms">Radiating Symptoms:</label>
-                            <input type="text" class="form-control" id="radiating_symptoms">
+                            <select class="form-control" id="radiating_symptoms">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
                         </div>
-                         <div class="form-group">
+
+                        <div id="radiating_symptoms_yes">
+                             <div class="form-group">
+                                <label for="choose_location">Choose Location:</label>
+                                <select class="form-control" id="choose_location">
+                                    <option>BUTTOCK</option>
+                                    <option>HIP</option>
+                                    <option>THIGH</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label for="stenosis">Stenosis:</label>
-                            <input type="text" class="form-control" id="stenosis">
+                            <select class="form-control" id="stenosis">
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>Do Not Know</option>
+                            </select>
                         </div>
+                        <div id="stenosis_yes">
+                             <div class="form-group">
+                                <label for="height_level">Height Level:</label>
+                                <input type="number" class="form-control " id="height_level">
+                            </div>
+                            <div class="form-group">
+                                <label for="hardware_severiity">Hardware Severity:</label>
+                                <input type="number" class="form-control " id="hardware_severiity">
+                            </div>
+                        </div>
+                       
                          <div class="form-group">
                             <label for="hyperlordosis">Hyperlordosis:</label>
-                            <input type="text" class="form-control" id="hyperlordosis">
+                           <select class="form-control" id="hyperlordosis">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="kyphosis">Kyphosis:</label>
-                            <input type="text" class="form-control" id="kyphosis">
+                            <label for="kyphosis">Kyphosis::</label>
+                            <select class="form-control" id="kyphosis">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="scoliosis">Scoliosis l/r:</label>
-                            <input type="text" class="form-control" id="scoliosis">
+                            <label for="scoliosis">Scoliosis:</label>
+                             <select class="form-control" id="scoliosis">
+                                <option>Right</option>
+                                <option>Left</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="pain">Pain:</label>
@@ -192,26 +243,26 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
                             aria-controls="collapseFour">
-                            Add Chair Section
+                            Add BACKREST Section
                             </a>
                     </h4>
                 </div>
                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                     <div class="panel-body">
                         <div class="form-group">
-                            <label for="chair_length">Chair Length:</label>
+                            <label for="chair_length">BACKREST  Length:</label>
                             <input type="number" class="form-control " id="chair_length">
                         </div>
                         <div class="form-group">
-                            <label for="chair_width">Chair Width:</label>
+                            <label for="chair_width">BACKREST  Width:</label>
                             <input type="number" class="form-control " id="chair_width">
                         </div>
                         <div class="form-group">
-                            <label for="chair_backrest">Chair Backrest:</label>
+                            <label for="chair_backrest">BACKREST  Backrest:</label>
                             <input type="number" class="form-control " id="chair_backrest">
                         </div>
                         <div class="form-group">
-                            <label for="seat_length">Length of Seat:</label>
+                            <label for="seat_length">SEAT DEPTH(cm):</label>
                             <input type="number" class="form-control " id="seat_length">
                         </div>
                         <div class="form-group">
@@ -219,7 +270,7 @@
                             <input type="number" class="form-control " id="seat_width">
                         </div>
                         <div class="form-group">
-                            <label for="chair_recline">Chair Recline:</label>
+                            <label for="chair_recline">Recline:</label>
                             <select class="form-control" id="chair_recline">
                                 <option>Yes</option>
                                 <option>No</option>
@@ -273,12 +324,16 @@
                 </div>
                 <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne1">
                     <div class="panel-body">
+                         <div class="form-group">
+                            <label for="patient_id1">Patient ID:</label>
+                            <p class="label-color" id="patient_id1">NA</p>
+                        </div>
                         <div class="form-group">
-                            <label for="back_height1">Back Height:</label>
+                            <label for="back_height1">TORSO Height:</label>
                             <p class="label-color" id="back_height1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="back_width1">Back Width:</label>
+                            <label for="back_width1">TORSO Width:</label>
                             <p class="label-color" id="back_width1">NA</p>
                         </div>
                         <div class="form-group">
@@ -320,14 +375,14 @@
                             <label for="general1">General:</label>
                             <p class="label-color" id="general1">NA</p>
                         </div>
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label for="physical_activity1">Regular Physical Activity:</label>
                             <p class="label-color" id="physical_activity1">NA</p>
                         </div>
                         <div class="form-group" id="activity">
                             <label for="which_activity1">Which Activity:</label>
                             <p class="label-color" id="which_activity1">NA</p>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -351,9 +406,23 @@
                             <label for="radiating_symptoms1">Radiating Symptoms:</label>
                             <p class="label-color" id="radiating_symptoms1">NA</p>
                         </div>
+                        <div class="form-group">
+                            <label for="choose_location1">Choose Location:</label>
+                            <p class="label-color" id="choose_location1">NA</p>
+                        </div>
                          <div class="form-group">
                             <label for="stenosis1">Stenosis:</label>
                             <p class="label-color" id="stenosis1">NA</p>
+                        </div>
+                        <div id="stenosis_yes1"  styel="display:none">
+                            <div class="form-group">
+                                <label for="height_level1">Height Level:</label>
+                                <p class="label-color" id="height_level1">NA</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="hardware_severiity1">Hardware Severity:</label>
+                                <p class="label-color" id="hardware_severiity1">NA</p>
+                            </div>
                         </div>
                          <div class="form-group">
                             <label for="hyperlordosis1">Hyperlordosis:</label>
@@ -364,7 +433,7 @@
                             <p class="label-color" id="kyphosis1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="scoliosis1">Scoliosis l/r:</label>
+                            <label for="scoliosis1">Scoliosis:</label>
                             <p class="label-color" id="scoliosis1">NA</p>
                         </div>
                         <div class="form-group">
@@ -403,7 +472,7 @@
                             <p class="label-color" id="chair_backrest1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="seat_length1">Length of Seat:</label>
+                            <label for="seat_length1">SEAT DEPTH(cm):</label>
                             <p class="label-color" id="seat_length1">NA</p>
                         </div>
                         <div class="form-group">
@@ -411,7 +480,7 @@
                             <p class="label-color" id="seat_width1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="chair_recline1">Chair Recline:</label>
+                            <label for="chair_recline1">Recline:</label>
                             <p class="label-color" id="chair_recline1">NA</p>
                         </div>
                     </div>
