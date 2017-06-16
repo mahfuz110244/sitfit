@@ -67,6 +67,10 @@
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
+                         <div class="form-group">
+                            <label for="name">Patient Name</label>
+                            <input type="name" class="form-control" id="name">
+                        </div>
                         <div class="form-group">
                             <label for="patient_id">Patient ID:</label>
                             <input type="text" class="form-control" id="patient_id">
@@ -80,7 +84,7 @@
                             <input type="number" class="form-control" id="back_width">
                         </div>
                         <div class="form-group">
-                            <label for="hip_length">Hip Length:</label>
+                            <label for="hip_length">Hip Length(cm):</label>
                             <input type="number" class="form-control " id="hip_length">
                         </div>
                         <div class="form-group">
@@ -89,7 +93,17 @@
                         </div>
                         <div class="form-group">
                             <label for="customer_image">Customer Image:</label>
-                            <input type="file" name="customer_image"id="customer_image" accept="image/*">
+                            <!--<input type="file" name="customer_image" id="customer_image" accept="image/*">-->
+                            <input type="file" name="customer_image" accept="image/*" id="image_path" onchange="loadFile(event)">
+                            <img id="customer_image" class="img-responsive"/>
+                            <script>
+                            var loadFile = function(event) {
+                                var customer_image = document.getElementById('customer_image');
+                                customer_image.src = URL.createObjectURL(event.target.files[0]);
+                                var customer_image = document.getElementById('customer_image1');
+                                customer_image1.src = URL.createObjectURL(event.target.files[0]);
+                            };
+                            </script>
                         </div>
                          <div class="form-group">
                             <label for="sitting_hours">No of Sitting Hours Per Day:</label>
@@ -250,11 +264,11 @@
                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                     <div class="panel-body">
                         <div class="form-group">
-                            <label for="chair_length">BACKREST  Length:</label>
+                            <label for="chair_length">BACKREST  Length(cm):</label>
                             <input type="number" class="form-control " id="chair_length">
                         </div>
                         <div class="form-group">
-                            <label for="chair_width">BACKREST  Width:</label>
+                            <label for="chair_width">BACKREST  Width(cm):</label>
                             <input type="number" class="form-control " id="chair_width">
                         </div>
                         <div class="form-group">
@@ -266,7 +280,7 @@
                             <input type="number" class="form-control " id="seat_length">
                         </div>
                         <div class="form-group">
-                            <label for="seat_width">Width of Seat:</label>
+                            <label for="seat_width">Width of Seat(cm):</label>
                             <input type="number" class="form-control " id="seat_width">
                         </div>
                         <div class="form-group">
@@ -324,20 +338,27 @@
                 </div>
                 <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne1">
                     <div class="panel-body">
+                        <div class="form-group">
+                            <img id="customer_image1" class="img-responsive"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Patient Name:</label>
+                            <p class="label-color" id="name1">Name</p>
+                        </div>
                          <div class="form-group">
                             <label for="patient_id1">Patient ID:</label>
                             <p class="label-color" id="patient_id1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="back_height1">TORSO Height:</label>
+                            <label for="back_height1">TORSO Height(cm):</label>
                             <p class="label-color" id="back_height1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="back_width1">TORSO Width:</label>
+                            <label for="back_width1">TORSO Width(cm):</label>
                             <p class="label-color" id="back_width1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="hip_length1">Hip Length:</label>
+                            <label for="hip_length1">Hip Length(cm):</label>
                             <p class="label-color" id="hip_length1">NA</p>
                         </div>
                         <div class="form-group">
@@ -460,15 +481,15 @@
                 <div id="collapseFour4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour4">
                     <div class="panel-body">
                         <div class="form-group">
-                            <label for="chair_length1">Chair Length:</label>
+                            <label for="chair_length1">BACKREST Length(cm):</label>
                             <p class="label-color" id="chair_length1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="chair_width1">Chair Width:</label>
+                            <label for="chair_width1">BACKREST Width(cm):</label>
                             <p class="label-color" id="chair_width1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="chair_backrest1">Chair Backrest:</label>
+                            <label for="chair_backrest1">BACKREST  Backrest(cm):</label>
                             <p class="label-color" id="chair_backrest1">NA</p>
                         </div>
                         <div class="form-group">
@@ -476,7 +497,7 @@
                             <p class="label-color" id="seat_length1">NA</p>
                         </div>
                         <div class="form-group">
-                            <label for="seat_width1">Width of Seat:</label>
+                            <label for="seat_width1">Width of Seat(cm):</label>
                             <p class="label-color" id="seat_width1">NA</p>
                         </div>
                         <div class="form-group">
@@ -586,17 +607,17 @@
                             <label for="material">Selected Material:</label>
                             <p>Nature of Work: <span id="nature_of_work2"></span></p>
                             <p>General: <span id="general2"></span></p>
-                            <p>Regular Physical Activity: <span id="physical_activity2"></span></p>
+                            <!--<p>Regular Physical Activity: <span id="physical_activity2"></span></p>-->
                             <p>Pain: <span id="pain2"></span></p>
                         </div>
                         <div class="form-group">
                             <label>Measurement:</label>
-                            <p>Chair Length: <span id="chair_length2"></span></p>
-                            <p>Chair Width: <span id="chair_width2"></span></p>
-                            <p>Chair Backrest: <span id="chair_backrest2"></span></p>
-                            <p>Length of Seat: <span id="seat_length2"></span></p>
-                            <p>Width of Seat: <span id="seat_width2"></span></p>
-                            <p>Chair Recline: <span id="chair_recline2"></span></p>
+                            <p>BACKREST Length(cm): <span id="chair_length2"></span></p>
+                            <p>BACKREST Width(cm): <span id="chair_width2"></span></p>
+                            <p>BACKREST  Backrest(cm):<span id="chair_backrest2"></span></p>
+                            <p>Length of Seat(cm): <span id="seat_length2"></span></p>
+                            <p>Width of Seat(cm): <span id="seat_width2"></span></p>
+                            <p>Recline: <span id="chair_recline2"></span></p>
                         </div>
                     </div>
                 </div>

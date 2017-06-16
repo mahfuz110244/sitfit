@@ -97,14 +97,21 @@
      });
 
     $('#chair_creation').click(function(){
+        var name=$("#name").val()
         var patient_id=$("#patient_id").val()
         var back_height=$("#back_height").val()
         var back_width=$("#back_width").val()
         var hip_length=$("#hip_length").val()
         var customer_number=$("#customer_number").val()
+        var customer_image = document.getElementById('customer_image');
+        var image_path = $("#image_path").val()
+        console.log(image_path)
+        // customer_image.src = URL.createObjectURL(event.target.files[0]);
         var sitting_hours=$("#sitting_hours").val()
         var nature_of_work=$("#nature_of_work").val()
         var additional_info1=$("#additional_info1").val()
+
+
 
         var general=$("#general").val()
         // var physical_activity=$("#physical_activity").val()
@@ -136,11 +143,16 @@
         if(chair_length!='' && chair_width!='' && seat_length!='' && seat_width!=''){
             $('#information1').hide()
             $('#information2').show()
+            document.getElementById('person_name').innerHTML=name;
+            document.getElementById('name1').innerHTML=name;
             document.getElementById('patient_id1').innerHTML=patient_id;
             document.getElementById('back_height1').innerHTML=back_height;
             document.getElementById('back_width1').innerHTML=back_width;
             document.getElementById('hip_length1').innerHTML=hip_length;
             document.getElementById('customer_number1').innerHTML=customer_number;
+            document.getElementById('customer_image1').innerHTML=customer_image;
+            // var customer_image1 = document.getElementById('customer_image1');
+            // customer_image1.src = image_path;
             document.getElementById('sitting_hours1').innerHTML=sitting_hours;
             document.getElementById('nature_of_work1').innerHTML=nature_of_work;
             document.getElementById('nature_of_work2').innerHTML=nature_of_work;
