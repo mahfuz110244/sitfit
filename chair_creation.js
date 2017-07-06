@@ -100,12 +100,16 @@
         var name=$("#name").val()
         var patient_id=$("#patient_id").val()
         var back_height=$("#back_height").val()
-        var back_width=$("#back_width").val()
+        // var back_width=$("#back_width").val()
+        var torso_shoulder=$("#torso_shoulder").val()
+        console.log(torso_shoulder)
+        var torso_waist=$("#torso_waist").val()
+        var torso_pelvis=$("#torso_pelvis").val()        
         var hip_length=$("#hip_length").val()
-        var customer_number=$("#customer_number").val()
+        // var customer_number=$("#customer_number").val()
         var customer_image = document.getElementById('customer_image');
         var image_path = $("#image_path").val()
-        console.log(image_path)
+        // console.log(image_path)
         // customer_image.src = URL.createObjectURL(event.target.files[0]);
         var sitting_hours=$("#sitting_hours").val()
         var nature_of_work=$("#nature_of_work").val()
@@ -135,10 +139,15 @@
 
         var chair_length=$("#chair_length").val()
         var chair_width=$("#chair_width").val()
-        var chair_backrest=$("#chair_backrest").val()
+        // var chair_backrest=$("#chair_backrest").val()
         var seat_length=$("#seat_length").val()
         var seat_width=$("#seat_width").val()
         var chair_recline=$("#chair_recline").val()
+
+        var address=$("#address").val()
+        var city=$("#city").val()
+        var post_office=$("#post_office").val()
+        var country=$("#country").val()
        
         if(chair_length!='' && chair_width!='' && seat_length!='' && seat_width!=''){
             $('#information1').hide()
@@ -147,9 +156,12 @@
             document.getElementById('name1').innerHTML=name;
             document.getElementById('patient_id1').innerHTML=patient_id;
             document.getElementById('back_height1').innerHTML=back_height;
-            document.getElementById('back_width1').innerHTML=back_width;
+            // document.getElementById('back_width1').innerHTML=back_width;
+            document.getElementById('torso_shoulder1').innerHTML=torso_shoulder;
+            document.getElementById('torso_waist1').innerHTML=torso_waist;
+            document.getElementById('torso_pelvis1').innerHTML=torso_pelvis;
             document.getElementById('hip_length1').innerHTML=hip_length;
-            document.getElementById('customer_number1').innerHTML=customer_number;
+            // document.getElementById('customer_number1').innerHTML=customer_number;
             document.getElementById('customer_image1').innerHTML=customer_image;
             // var customer_image1 = document.getElementById('customer_image1');
             // customer_image1.src = image_path;
@@ -180,18 +192,28 @@
             document.getElementById('pain2').innerHTML=pain;
             document.getElementById('additional_info22').innerHTML=additional_info2;
 
-            document.getElementById('chair_length1').innerHTML=back_height;
-            document.getElementById('chair_length2').innerHTML=back_height;
-            document.getElementById('chair_width1').innerHTML=back_width;
-            document.getElementById('chair_width2').innerHTML=back_width;
-            document.getElementById('chair_backrest1').innerHTML=hip_length;
-            document.getElementById('chair_backrest2').innerHTML=hip_length;
-            document.getElementById('seat_length1').innerHTML=customer_number;
-            document.getElementById('seat_length2').innerHTML=customer_number;
-            document.getElementById('seat_width1').innerHTML=sitting_hours;
-            document.getElementById('seat_width2').innerHTML=sitting_hours;
-            document.getElementById('chair_recline1').innerHTML=nature_of_work;
-            document.getElementById('chair_recline2').innerHTML=nature_of_work;
+            document.getElementById('chair_length1').innerHTML=chair_length;
+            document.getElementById('chair_length2').innerHTML=chair_length;
+            document.getElementById('chair_width1').innerHTML=chair_width;
+            document.getElementById('chair_width2').innerHTML=chair_width;
+            // document.getElementById('chair_backrest1').innerHTML=hip_length;
+            // document.getElementById('chair_backrest2').innerHTML=hip_length;
+            document.getElementById('seat_length1').innerHTML=seat_length;
+            document.getElementById('seat_length2').innerHTML=seat_length;
+            document.getElementById('seat_width1').innerHTML=seat_width;
+            document.getElementById('seat_width2').innerHTML=seat_width;
+            document.getElementById('chair_recline1').innerHTML=chair_recline;
+            document.getElementById('chair_recline2').innerHTML=chair_recline;
+
+            document.getElementById('address1').innerHTML=address;
+            document.getElementById('city1').innerHTML=city;
+            document.getElementById('post_office1').innerHTML=post_office;
+            document.getElementById('country1').innerHTML=country;
+
+            document.getElementById('address2').innerHTML=address;
+            document.getElementById('city2').innerHTML=city;
+            document.getElementById('post_office2').innerHTML=post_office;
+            document.getElementById('country2').innerHTML=country;
 
 
             $('#result').show()
@@ -235,13 +257,14 @@
     });
 
     $('#plus').click(function(){
-       var number = Math.floor(Math.random() * 4) + 1;
+       var number = Math.floor(Math.random() * 5) + 1;
        console.log(number)
        if(number==1){
             $('#chair1').hide()
             $('#chair2').hide()
             $('#chair3').hide()
             $('#chair4').hide()
+            $('#chair5').hide()
             $('#chair2').show()
        }
        else if(number==2){
@@ -249,6 +272,7 @@
             $('#chair2').hide()
             $('#chair3').hide()
             $('#chair4').hide()
+            $('#chair5').hide()
             $('#chair3').show()
        }
        else if(number==3){
@@ -256,14 +280,16 @@
             $('#chair2').hide()
             $('#chair3').hide()
             $('#chair4').hide()
+            $('#chair5').hide()
             $('#chair4').show()
        }
-       else{
+       else if(number==4){
             $('#chair1').hide()
             $('#chair2').hide()
             $('#chair3').hide()
             $('#chair4').hide()
-            $('#chair1').show()
+            $('#chair5').hide()
+            $('#chair5').show()
        }
     });
     $('#minus').click(function(){
@@ -274,13 +300,15 @@
             $('#chair2').hide()
             $('#chair3').hide()
             $('#chair4').hide()
-            $('#chair4').show()
+            $('#chair5').hide()
+            $('#chair5').show()
        }
        else if(number==2){
             $('#chair1').hide()
             $('#chair2').hide()
             $('#chair3').hide()
             $('#chair4').hide()
+            $('#chair5').hide()
             $('#chair1').show()
        }
        else if(number==3){
@@ -288,13 +316,15 @@
             $('#chair2').hide()
             $('#chair3').hide()
             $('#chair4').hide()
+            $('#chair5').hide()
             $('#chair2').show()
        }
-       else{
+       else if(number==4){
             $('#chair1').hide()
             $('#chair2').hide()
             $('#chair3').hide()
             $('#chair4').hide()
+            $('#chair5').hide()
             $('#chair3').show()
        }
     });
@@ -304,8 +334,9 @@
             title: "Information Submitted Successfully.",
             type: "success",
             confirmButtonText: "OK"
-            }).then(function () {
-            window.location = "index.html";
+        }).then(function () {
+            $('#cancel_submit').hide()
+            // window.location = "index.html";
         });
     });
 
